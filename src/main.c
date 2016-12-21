@@ -32,7 +32,7 @@ void sms_proc(const char* phone_num, const char* recv_time, const char* msg)
 int main(int argc, char* argv[])
 {
 	int ret;
-	printf("netchk2 is empty program... bye bye\r\n");
+	printf("netchk3 is empty program... bye bye\r\n");
 
 	signal( SIGINT, sigint_handler);
 	logd_init();
@@ -53,16 +53,16 @@ int main(int argc, char* argv[])
 	}
 	//else {
 		printf("at_open call()\n");
-		ret = at_open(e_DEV_TX500, noti_proc, sms_proc, "console");
+		ret = at_open(e_DEV_TX501_BASE, noti_proc, sms_proc, "console");
 		//ret = at_open(e_DEV_TX500, NULL, NULL, "console");
 		printf("at_open ret[%d]\n", ret);
 	//}
 
 	while(1) {
-		LOGD(eSVC_COMMON, "netchk2 alive app #2\n");
-		LOGE(eSVC_COMMON, "netchk2 alive app #2\n");
-		LOGT(eSVC_COMMON, "netchk2 alive app #2\n");
-		printf("netchk2 alive app #2\n");
+		LOGD(eSVC_COMMON, "netchk3 alive app #2\n");
+		LOGE(eSVC_COMMON, "netchk3 alive app #2\n");
+		LOGT(eSVC_COMMON, "netchk3 alive app #2\n");
+		printf("netchk3 alive app #2\n");
 		sleep(1);		
 	}
 
