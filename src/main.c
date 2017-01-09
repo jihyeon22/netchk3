@@ -5,6 +5,13 @@
 #include <at/at_util.h>
 #include <logd_rpc.h>
 
+#ifdef BOARD_TX501S
+#define AT_LIB_TARGET_DEV   e_DEV_TX501_BASE
+#elif BOARD_TL500S
+#define AT_LIB_TARGET_DEV   e_DEV_TL500_BASE
+#endif
+
+
 void sigint_handler( int signo)
 {
 	printf("signo = [%d]\n", signo);
@@ -53,7 +60,7 @@ int main(int argc, char* argv[])
 	}
 	//else {
 		printf("at_open call()\n");
-		ret = at_open(e_DEV_TX501_BASE, noti_proc, sms_proc, "console");
+		ret = at_open(AT_LIB_TARGET_DEV, noti_proc, sms_proc, "console");
 		//ret = at_open(e_DEV_TX501_BASE, NULL, NULL, "console");
 		printf("at_open ret[%d]\n", ret);
 	//}
