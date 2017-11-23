@@ -31,7 +31,7 @@ CFLAGS	+= -DBOARD_$(BOARD)
 # Target rules
 
 CFLAGS	+= 
-LDFLAGS	+= -lpthread -lat3 -llogd
+LDFLAGS	+= -lpthread -lat3 -llogd  -lmdsapi
 
 OBJS	:= src/main.o
 APP	:= netchk3
